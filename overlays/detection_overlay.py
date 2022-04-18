@@ -39,8 +39,15 @@ class DetectionOverlay:
     """
     bboxes = []
     if self.args.bbox_name_key in feature:
-      for ibbox, label in enumerate (feature[self.args.bbox_name_key].bytes_list.value):
-        bboxes.append( (label.decode("utf-8"),
+#      for ibbox, label in enumerate (feature[self.args.bbox_name_key].bytes_list.value):
+      for ibbox, label in enumerate (feature[self.args.bbox_name_key].float_list.value):
+#        bboxes.append( (label.decode("utf-8"),
+#                        feature[self.args.bbox_xmin_key].float_list.value[ibbox],
+#                        feature[self.args.bbox_xmax_key].float_list.value[ibbox],
+#                        feature[self.args.bbox_ymin_key].float_list.value[ibbox],
+#                        feature[self.args.bbox_ymax_key].float_list.value[ibbox]
+#      ) )
+        bboxes.append( (str(label),
                         feature[self.args.bbox_xmin_key].float_list.value[ibbox],
                         feature[self.args.bbox_xmax_key].float_list.value[ibbox],
                         feature[self.args.bbox_ymin_key].float_list.value[ibbox],
