@@ -1,5 +1,6 @@
 # How to
 
+- `source ws_270322_trafficsign/computer-vision-tf2/env/bin/activate`
 - `git clone https://github.com/pharath/tfrecord-viewer.git`
 - `cd tfrecord-viewer/` (**important!!!** Else it will not work!)
 - `python tfviewer.py --bbox-name-key image/object/class/label path/to/GTSD_train_00000-of-00000.records`
